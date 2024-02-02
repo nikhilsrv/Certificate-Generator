@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate Generator</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div id="navbar">
+        <div id="logo"></div>
+        <div id="options">
+            <div>Home</div>
+            <div>About</div>
+            <div>Contact</div>
+            <div>Log In</div>
+            <div>Sign Up</div>
+        </div>
+    </div>
+    <div id="Try">
+        <div id="catchy_line">Generate multiple certificates at once.</div>
+        <button id="try">Try For Free</button>
+    </div>
+    <div id="main">
+        <div id="upload_section">
+            <div id="upload_section_body">
+                <div>Upload Certificate (pdf format only)</div>
+                <div id="input">
+                    <input type="file" id="file_in" name="avatar" accept=".pdf" required="true" />
+                </div>
+                <button id="upload">Upload</button>
+            </div>
+
+        </div>
+        <div id="pdf_view_section">
+            <div id="Checking_section">
+                <div id="items">
+                    <h4 id="items_heading">Set position of name in x direction</h4>
+                    <input type="text" id="x" placeholder="Enter without any unit eg 200">
+                </div>
+
+                <div id="items">
+                    <h4 id="items_heading">Set position of name in y direction</h4>
+                    <input type="text" id="y" placeholder="Enter without any unit eg 300">
+                </div>
+
+                <div id="items">
+                    <h4 id="items_heading">Set font size</h4>
+                    <input type="text" id="size" placeholder="Enter without any units eg 57">
+                </div>
+
+                <div>
+                    <button id="check">Check</button>
+                </div>
+            </div>
+            <div id="view">
+                <div class="loader"></div>
+                <iframe src="" id="output" height="100%" width="100%"></iframe>
+            </div>
+        </div>
+        <div id="names_section">
+            <div id="names_div">
+                <h4 id="items_heading">Enter names separated by ","</h4>
+                <input type="text" id="names">
+            </div>
+            <button id="generate"  disabled="true">Generate Certificate</button>
+        </div>
+    </div>
+    <script src="https://unpkg.com/pdf-lib@1.4.0"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://unpkg.com/@pdf-lib/fontkit@0.0.4"></script>
+    <script src="/app.js"></script>
+</body>
+</html>
