@@ -11,9 +11,16 @@ const output=document.getElementById("output");
 const generate=document.getElementById("generate");
 const namesInput = document.getElementById('names');
 const check=document.getElementById("check");
+const view=document.getElementById("view");
 var use_url=""
+
+let width=screen.width;
+console.log(screen.height);
 Try.addEventListener("click", () => {
+    if(width>=700)
     window.scrollTo(0, 700);
+    else
+    window.scrollTo(0,200);
 })
 
 
@@ -24,6 +31,19 @@ const uploadFile=async()=> {
     alert("No file has been choosen")
     return
     }
+    if(width<=700)
+    {
+        window.scrollTo(0,550)
+        view.style.height="40rem"
+        view.style.width="40rem";
+    }
+    else
+    {
+    view.style.height="30rem"
+    view.style.width="30rem";
+    }
+    
+    view.style.position="absolute";
     loader.style.display = "block";
 
     const Data = files_in.files[0];
@@ -52,7 +72,7 @@ upload.addEventListener("click", uploadFile);
 
 // PDF View section starts
 const generatePDF = async () => {
-    //console.log(use_url)
+   // console.log(use_url)
     if(use_url.length===0)
     {
         alert("First Upload a certificate");
@@ -85,11 +105,22 @@ const generatePDF = async () => {
         color: rgb(0.2, 0.84, 0.67),
     });
 
+    
+  //  const pdfDataUri = await pdfDoc.saveAsBase64({ dataUri: true });
+    const modifiedPdfBytes = await pdfDoc.save();
 
-    const pdfDataUri = await pdfDoc.saveAsBase64({ dataUri: true });
+    // Convert modified PDF data into a Blob
+    const modifiedPdfBlob = new Blob([modifiedPdfBytes], { type: 'application/pdf' });
+
+    // Create URL for the Blob
+    const modifiedPdfUrl = URL.createObjectURL(modifiedPdfBlob);
+ 
+// Open the PDF in a new tab
+window.open(modifiedPdfUrl, '_blank');
     loader.style.display = "none";
-    output.style.display = "block";
-    output.src = pdfDataUri;
+    view.style.position="static";
+    view.style.height="0rem"
+    view.style.width="0rem";
     generate.disabled = false
 }
 check.addEventListener("click", generatePDF);

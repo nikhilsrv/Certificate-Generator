@@ -9,6 +9,7 @@ html {
 }
 
 body {
+    overflow-x: hidden;
     background-color: #F4F6FF;
 }
 
@@ -136,6 +137,7 @@ body {
 }
 
 #pdf_view_section {
+    position: relative;
     background-color: #F7F7F7;
     border-radius: 1rem;
     width: 95vw;
@@ -147,7 +149,6 @@ body {
 }
 
 #Checking_section {
-    flex: 0.3;
     height: 90%;
     display: flex;
     flex-direction: column;
@@ -156,7 +157,8 @@ body {
 }
 
 #view {
-    flex: 0.7;
+    background-color: #F4F6FF;
+    z-index: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -192,14 +194,6 @@ body {
     border-radius: 2rem;
     background-color: #18122B;
     color: #f3f3f3;
-}
-
-#view {
-    height: 90%;
-}
-
-#output {
-    display: none;
 }
 
 .loader {
@@ -274,3 +268,120 @@ body {
     color: #f3f3f3;
     cursor: pointer;
 }
+
+
+@media screen and (max-width: 700px) {
+
+    html{
+        font-size: 6px;
+    }
+       
+    #navbar {
+        height: 20rem;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #logo {
+        flex: 0.5;
+        height: 18rem;
+    }
+    
+    #options {
+        display: none;
+    }
+    
+    #upload_section_body div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+    }
+    
+    #file_in{
+        width: 25rem;
+        font-size: 2rem;
+    }
+    #file_in::file-selector-button {
+        height: 4rem;
+        width: 8rem;
+        margin-right: 1rem;
+        font-size: 1rem;
+    }
+    
+    #upload {
+        width: 15rem;
+        height: 4rem;
+        font-size: 2rem;
+    }
+
+    #pdf_view_section {
+        flex-direction: column; 
+        justify-content: center;
+        height: 120rem;
+    }
+    
+    #Checking_section {
+        height: 90%;
+        width: 40rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    
+    #items {
+        width: 100%;
+    }
+    
+    #items input {
+        width: 30rem;
+        font-size: 1.8rem;
+    }
+    
+    #items_heading {
+        font-size: 2rem;
+    }
+    
+    #check {
+        width: 20rem;
+        font-size: 2.3rem;
+    }
+    
+    
+    #output {
+        display: none;
+        height:100%;
+        width:90%;
+    }
+    
+    #names_section{
+        height: 25rem;
+    }
+    #names_div{
+        width: 80%;   
+        height: 60%;
+    }
+    #names_div input{
+        width: 80%;
+        height: 30%;
+        border-radius: 2.2rem;
+        padding-left: 10px;
+    }
+    #names_div h4{
+        font-size: 2.5rem;
+    }
+    
+    #generate{
+        width: 25rem;
+        height: 5rem;
+        font-size: 2rem;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    html{
+        font-size: 4px;
+    }
+    
+  }
