@@ -12,6 +12,9 @@ const generate=document.getElementById("generate");
 const namesInput = document.getElementById('names');
 const check=document.getElementById("check");
 const view=document.getElementById("view");
+const main_component=document.getElementById("main_component");
+const cross=document.getElementById("cross");
+const disclaimer=document.getElementById("disclaimer")
 var use_url=""
 
 let width=screen.width;
@@ -23,6 +26,10 @@ Try.addEventListener("click", () => {
     window.scrollTo(0,200);
 })
 
+cross.addEventListener("click",()=>{
+    disclaimer.style.display="none";
+    main_component.style.display="block";
+})
 
 // Upload file section starts
 const uploadFile=async()=> {

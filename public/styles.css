@@ -13,6 +13,30 @@ body {
     background-color: #F4F6FF;
 }
 
+#disclaimer{
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+#disc_text{
+    width: 50%;
+    text-align: center;
+    font-size: 2.5rem;
+}
+#cross{
+    font-size: 5rem;
+    cursor: pointer;
+}
+
+#main_component{
+    display: none;
+}
 #navbar {
     width: 100vw;
     height: 10rem;
